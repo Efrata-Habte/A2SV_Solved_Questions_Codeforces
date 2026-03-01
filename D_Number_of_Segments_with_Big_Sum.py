@@ -3,16 +3,14 @@ nums = list(map(int,input().split()))
 
 left = 0
 curr = 0
-count = 0
+answer = 0
 
-for right in range(len(nums)):
+for right in range(n):
     curr += nums[right]
 
-    while curr > s:
+    while curr >= s:
+        answer += n - right
         curr -= nums[left]
-        left += 1
+        left+=1
 
-    count += right - left + 1
-
-print(count)
-    
+print(answer)
